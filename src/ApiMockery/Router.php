@@ -13,6 +13,9 @@ use Slim\App;
 
 class Router
 {
+    /**
+     * @var array
+     */
     private $responseHandler =
         [
             'object' => ObjectResponseHandler::class,
@@ -54,7 +57,19 @@ class Router
         }
     }
 
+    protected function getOperationClosure(self $router, Operation $operation): \Closure
+    {
+        return function ($request, $response, $args) use ($router, $operation) {
+            if (!is_array($args)) {
+                $args = [];
+            }
+
+            return $router->getResponseHandlerByType($operation)->execute($request, $response, $args);
+        };
+    }
+
     /**
+     * @return ResponseHandlerInterface
      * @throws ConfigurationMismatchException
      */
     public function getResponseHandlerByType(Operation $operation): ResponseHandlerInterface
@@ -78,12 +93,5 @@ class Router
     public function setResponseHandler(array $responseHandler): void
     {
         $this->responseHandler = $responseHandler;
-    }
-
-    protected function getOperationClosure(self $router, Operation $operation): \Closure
-    {
-        return function ($request, $response, $args) use ($router, $operation) {
-            return $router->getResponseHandlerByType($operation)->execute($request, $response, $args);
-        };
     }
 }

@@ -4,13 +4,12 @@ declare(strict_types=1);
 namespace ApiMockery\Api;
 
 use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\ServerRequestInterface as RequestInterface;
 
 interface ResponseHandlerInterface
 {
-    public function execute(
-        ServerRequestInterface $serverRequest,
-        ResponseInterface $response,
-        $args
-    ): ResponseInterface;
+    /**
+     * @param array $args
+     */
+    public function execute(RequestInterface $request, ResponseInterface $response, array $args): ResponseInterface;
 }

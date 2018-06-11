@@ -127,7 +127,7 @@
         ],
         "x-apis-json": {
           "response_handler_type": "files",
-          "response_handler": "responses/pets/pet{id}.json"
+          "response_handler": "responses/pets/pet{id}"
         },
         "parameters": [
           {

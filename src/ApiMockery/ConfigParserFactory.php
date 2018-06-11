@@ -14,6 +14,9 @@ use Noodlehaus\ConfigInterface;
  */
 class ConfigParserFactory
 {
+    /**
+     * @var array
+     */
     protected $configParser =
         [
             '2.0' => V2::class,

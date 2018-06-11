@@ -29,7 +29,7 @@ class V2 implements ConfigParserInterface
     const RESPONSE_HANDLER = 'response_handler';
 
     /**
-     * @throws ConfigurationMismatchException
+     * @inheritdoc
      */
     public function parse(ConfigInterface $config): array
     {
@@ -44,6 +44,8 @@ class V2 implements ConfigParserInterface
     }
 
     /**
+     * @param  array $operations
+     * @return array
      * @throws ConfigurationMismatchException
      */
     protected function parseOperations(array $operations): array
@@ -63,9 +65,11 @@ class V2 implements ConfigParserInterface
     }
 
     /**
+     * @param array $operationAttributes
+     * @return array
      * @throws ConfigurationMismatchException
      */
-    protected function parseResponseHandlerConfig($operationAttributes): array
+    protected function parseResponseHandlerConfig(array $operationAttributes): array
     {
         $this->validateResponseHandlerConfig($operationAttributes);
 
@@ -77,9 +81,10 @@ class V2 implements ConfigParserInterface
     }
 
     /**
+     * @param array $operationAttributes
      * @throws ConfigurationMismatchException
      */
-    protected function validateResponseHandlerConfig($operationAttributes): void
+    protected function validateResponseHandlerConfig(array $operationAttributes): void
     {
         if (isset($operationAttributes[self::X_APIS_JSON]) === false) {
             throw new ConfigurationMismatchException('X_APIS_JSON attribute is missing.');

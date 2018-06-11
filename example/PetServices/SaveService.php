@@ -1,8 +1,7 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PetServices;
 
-use ApiMockery\Api\MockServiceInterface;
 use ApiMockery\Api\ResponseHandlerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
