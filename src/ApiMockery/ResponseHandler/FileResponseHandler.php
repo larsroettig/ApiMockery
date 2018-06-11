@@ -13,8 +13,9 @@ class FileResponseHandler extends AbstractResponseHandler
     /**
      * @inheritdoc
      */
-    private const JSON = '.json';
-    private const XML = '.xml';
+    const JSON = '.json';
+    const XML = '.xml';
+
     /**
      * @var string
      */
@@ -33,7 +34,7 @@ class FileResponseHandler extends AbstractResponseHandler
         return $this->writeFileRespond($response, $responseFileName);
     }
 
-    protected function initResponseType(RequestInterface $serverRequest): void
+    protected function initResponseType(RequestInterface $serverRequest)
     {
         if ($serverRequest->hasHeader(self::CONTENT_TYPE) === true) {
             $contentType = $serverRequest->getHeaderLine(self::CONTENT_TYPE);
@@ -53,7 +54,7 @@ class FileResponseHandler extends AbstractResponseHandler
         return $this->responseContentType;
     }
 
-    public function setResponseContentType(string $responseContentType): void
+    public function setResponseContentType(string $responseContentType)
     {
         $this->responseContentType = $responseContentType;
     }

@@ -56,7 +56,7 @@ class V2 implements ConfigParserInterface
             $operationId = $operationAttributes[self::OPERATION_ID];
             $produces = $operationAttributes[self::PRODUCES];
 
-            [$type, $responseHandler] = $this->parseResponseHandlerConfig($operationAttributes);
+            list($type, $responseHandler) = $this->parseResponseHandlerConfig($operationAttributes);
 
             $parsedOperations[] = new Operation($operationType, $operationId, $produces, $type, $responseHandler);
         }
@@ -84,7 +84,7 @@ class V2 implements ConfigParserInterface
      * @param array $operationAttributes
      * @throws ConfigurationMismatchException
      */
-    protected function validateResponseHandlerConfig(array $operationAttributes): void
+    protected function validateResponseHandlerConfig(array $operationAttributes)
     {
         if (isset($operationAttributes[self::X_APIS_JSON]) === false) {
             throw new ConfigurationMismatchException('X_APIS_JSON attribute is missing.');
