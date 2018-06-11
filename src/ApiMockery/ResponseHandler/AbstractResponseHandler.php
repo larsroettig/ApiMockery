@@ -41,7 +41,6 @@ abstract class AbstractResponseHandler implements ResponseHandlerInterface
 
     /**
      * AbstractResponseHandler constructor.
-     * @param Operation $operation
      */
     public function __construct(string $basePath, Operation $operation)
     {
@@ -78,7 +77,6 @@ abstract class AbstractResponseHandler implements ResponseHandlerInterface
 
     /**
      * Write the
-     * @param string $contentType
      * @param string $body
      */
     protected function writeRespond(

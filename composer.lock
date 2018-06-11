@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "af1d97c51e48e32ba001aaa7e89d3269",
+    "content-hash": "79296d6586f4e2977b9f529924b48b95",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -4176,16 +4176,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "4.6.0",
+            "version": "4.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "95436f14d4a6fe8638bcba09d3a8e19266846ee4"
+                "reference": "de4a6fecdd6d00218e9c7d019a4ff47e123692cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/95436f14d4a6fe8638bcba09d3a8e19266846ee4",
-                "reference": "95436f14d4a6fe8638bcba09d3a8e19266846ee4",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/de4a6fecdd6d00218e9c7d019a4ff47e123692cf",
+                "reference": "de4a6fecdd6d00218e9c7d019a4ff47e123692cf",
                 "shasum": ""
             },
             "require": {
@@ -4198,7 +4198,7 @@
                 "phpstan/phpstan": "0.9.2",
                 "phpstan/phpstan-phpunit": "0.9.4",
                 "phpstan/phpstan-strict-rules": "0.9",
-                "phpunit/phpunit": "7.1.5"
+                "phpunit/phpunit": "7.2.4"
             },
             "type": "phpcodesniffer-standard",
             "autoload": {
@@ -4211,7 +4211,7 @@
                 "MIT"
             ],
             "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
-            "time": "2018-05-15T21:21:12+00:00"
+            "time": "2018-06-11T19:10:45+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
