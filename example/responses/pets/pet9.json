@@ -1,0 +1,9 @@
+{
+  "status": 500,
+  "response": {
+    "properties": {
+      "code": 500,
+      "message": "Error Test"
+    }
+  }
+}

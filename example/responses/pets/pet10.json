@@ -1,0 +1,9 @@
+{
+  "status": 404,
+  "response": {
+    "properties": {
+      "code": 404,
+      "message": "Pet with id {id} not found"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<body>
+    <status>200</status>
+    <response>
+        <properties>
+            <id>1</id>
+            <name>Eagle</name>
+        </properties>
+    </response>
+</body>
