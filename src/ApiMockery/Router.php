@@ -44,7 +44,7 @@ class Router
     /**
      * @param Path[] $routes
      */
-    public function setup(array $routes): void
+    public function setup(array $routes)
     {
         foreach ($routes as $route) {
             $path = $route->getBaseUrl();
@@ -90,7 +90,7 @@ class Router
         return $this->responseHandler;
     }
 
-    public function setResponseHandler(array $responseHandler): void
+    public function setResponseHandler(array $responseHandler)
     {
         $this->responseHandler = $responseHandler;
     }
