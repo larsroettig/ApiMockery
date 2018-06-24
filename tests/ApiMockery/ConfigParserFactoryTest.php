@@ -6,6 +6,11 @@ use ApiMockery\ConfigParserFactory;
 use Noodlehaus\ConfigInterface;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class ConfigParserFactoryTest
+ * @package ApiMockery\Tests
+ * @cover ConfigParserFactory
+ */
 class ConfigParserFactoryTest extends TestCase
 {
     /**

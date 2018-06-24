@@ -48,11 +48,19 @@ abstract class AbstractResponseHandler implements ResponseHandlerInterface
         $this->operation = $operation;
     }
 
+    /**
+     * @return string
+     * @codeCoverageIgnore
+     */
     public function getBasePath(): string
     {
         return $this->basePath;
     }
 
+    /**
+     * @return Operation
+     * @codeCoverageIgnore
+     */
     public function getOperation(): Operation
     {
         return $this->operation;
@@ -60,6 +68,7 @@ abstract class AbstractResponseHandler implements ResponseHandlerInterface
 
     /**
      * @return array
+     * @codeCoverageIgnore
      */
     public function getRelevantMimeTypes(): array
     {
@@ -68,16 +77,21 @@ abstract class AbstractResponseHandler implements ResponseHandlerInterface
 
     /**
      * @param array $relevantMimeTypes
+     * @return void
+     * @codeCoverageIgnore
      */
-    public function setRelevantMimeTypes(array $relevantMimeTypes): void
+    public function setRelevantMimeTypes(array $relevantMimeTypes)
     {
         $this->relevantMimeTypes = $relevantMimeTypes;
     }
 
 
     /**
-     * Write the
+     * @param ResponseInterface $response
+     * @param int $statusCode
+     * @param string $contentType
      * @param string $body
+     * @return ResponseInterface
      */
     protected function writeRespond(
         ResponseInterface $response,
@@ -86,6 +100,8 @@ abstract class AbstractResponseHandler implements ResponseHandlerInterface
         string $body
     ): ResponseInterface {
         $response->getBody()->write($body);
-        return $response->withStatus($statusCode)->withHeader(self::CONTENT_TYPE, $contentType);
+        $response->withStatus($statusCode);
+        $response->withHeader(self::CONTENT_TYPE, $contentType);
+        return $response;
     }
 }

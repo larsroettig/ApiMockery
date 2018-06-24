@@ -14,7 +14,11 @@ use ApiMockery\Exception\ConfigurationMismatchException;
 use Noodlehaus\ConfigInterface;
 use PHPUnit\Framework\TestCase;
 
-
+/**
+ * Class V2Test
+ * @package ApiMockery\Tests\Config\Swagger
+ * @cover ApiMockery\Config\Swagger\V2
+ */
 class V2Test extends TestCase
 {
     /**
@@ -92,21 +96,7 @@ class V2Test extends TestCase
                                         'response_handler_type' => 'object',
                                         'response_handler' => '\\Pets\\GetListService',
                                     ),
-                            ),
-                        'post' =>
-                            array(
-                                'description' => 'Creates a new pet in the store.  Duplicates are allowed',
-                                'operationId' => 'addPet',
-                                'produces' =>
-                                    array(
-                                        0 => 'application/xml',
-                                    ),
-                                'x-apis-json' =>
-                                    array(
-                                        'response_handler_type' => 'object',
-                                        'response_handler' => '\\Pets\\GetListService',
-                                    ),
-                            ),
+                            )
                     )
             ));
 
@@ -118,7 +108,15 @@ class V2Test extends TestCase
          */
         foreach ($parsedPaths as $path) {
             self::assertEquals($path->getBaseUrl(), '/pets');
-            self::assertCount(2, $path->getOperations());
+
+            $operations = $path->getOperations();
+            self::assertCount(1, $path->getOperations());
+
+            self::assertCount(1, $operations[0]->getProduces());
+            self::assertEquals('get', $operations[0]->getType());
+            self::assertEquals('findPets', $operations[0]->getOperationId());
+            self::assertEquals('object', $operations[0]->getResponseHandlerType());
+            self::assertEquals('\\Pets\\GetListService', $operations[0]->getResponseHandler());
         }
     }
 

@@ -1,0 +1,176 @@
+Total: 52
+Killed mutants:
+===============
+
+
+Mutator: Foreach_
+Line 43
+
+Mutator: Foreach_
+Line 40
+
+Mutator: PublicVisibility
+Line 38
+
+Mutator: PublicVisibility
+Line 58
+
+Mutator: PublicVisibility
+Line 66
+
+Mutator: PublicVisibility
+Line 74
+
+Mutator: PublicVisibility
+Line 82
+
+Mutator: PublicVisibility
+Line 90
+
+Mutator: PublicVisibility
+Line 37
+
+Mutator: PublicVisibility
+Line 42
+
+Errors mutants:
+===============
+
+
+Escaped mutants:
+================
+
+
+Timed Out mutants:
+==================
+
+
+Not Covered mutants:
+====================
+
+
+Mutator: LogicalNot
+Line 59
+
+Mutator: ProtectedVisibility
+Line 56
+
+Mutator: PublicVisibility
+Line 51
+
+Mutator: PublicVisibility
+Line 56
+
+Mutator: PublicVisibility
+Line 64
+
+Mutator: PublicVisibility
+Line 72
+
+Mutator: ProtectedVisibility
+Line 82
+
+Mutator: PublicVisibility
+Line 24
+
+Mutator: TrueValue
+Line 39
+
+Mutator: Identical
+Line 39
+
+Mutator: NotIdentical
+Line 41
+
+Mutator: NotIdentical
+Line 41
+
+Mutator: LogicalOr
+Line 41
+
+Mutator: Identical
+Line 47
+
+Mutator: ProtectedVisibility
+Line 37
+
+Mutator: PublicVisibility
+Line 52
+
+Mutator: PublicVisibility
+Line 57
+
+Mutator: FalseValue
+Line 70
+
+Mutator: NotIdentical
+Line 70
+
+Mutator: DecrementInteger
+Line 71
+
+Mutator: OneZeroInteger
+Line 71
+
+Mutator: IncrementInteger
+Line 72
+
+Mutator: OneZeroInteger
+Line 72
+
+Mutator: IncrementInteger
+Line 72
+
+Mutator: OneZeroInteger
+Line 72
+
+Mutator: LogicalNot
+Line 73
+
+Mutator: Throw_
+Line 74
+
+Mutator: Foreach_
+Line 71
+
+Mutator: PublicVisibility
+Line 67
+
+Mutator: TrueValue
+Line 95
+
+Mutator: NotIdentical
+Line 95
+
+Mutator: Throw_
+Line 97
+
+Mutator: ProtectedVisibility
+Line 89
+
+Mutator: PublicVisibility
+Line 107
+
+Mutator: DecrementInteger
+Line 142
+
+Mutator: IncrementInteger
+Line 142
+
+Mutator: ProtectedVisibility
+Line 124
+
+Mutator: PublicVisibility
+Line 14
+
+Mutator: FalseValue
+Line 45
+
+Mutator: Identical
+Line 45
+
+Mutator: Throw_
+Line 47
+
+Mutator: PublicVisibility
+Line 41

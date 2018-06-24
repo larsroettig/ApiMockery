@@ -6,6 +6,7 @@ namespace ApiMockery\Dto;
 /**
  * Class ConfigFactory
  * @package ApiMockery
+ * @codeCoverageIgnore
  */
 class Operation
 {

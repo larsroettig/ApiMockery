@@ -2,6 +2,7 @@
 
 namespace PetServices;
 
+use ApiMockery\Api\ResponseHandlerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
