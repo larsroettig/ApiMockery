@@ -48,7 +48,7 @@ Currently this library support swagger config files from type v2
   }
 }
 ``` 
-### [Example Config File](https://github.com/larsroettig/ApiMockeryExample/src/config/response_handler.json)
+### [Example Config File](https://github.com/larsroettig/ApiMockeryExample/blob/master/src/config/response_handler.json)
 
 ## Example Implementation
 [Github Repo](https://github.com/larsroettig/ApiMockeryExample)
