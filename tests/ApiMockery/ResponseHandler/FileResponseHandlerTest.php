@@ -148,6 +148,16 @@ class FileResponseHandlerTest extends TestCase
             ->method('getBody')
             ->willReturn($mock);
 
+        $this->responseMock->expects(self::once())
+            ->method('withStatus')
+            ->with(200)
+            ->willReturn($this->responseMock);
+
+        $this->responseMock->expects(self::once())
+            ->method('withHeader')
+            ->with(FileResponseHandler::CONTENT_TYPE, FileResponseHandler::APPLICATION_JSON)
+            ->willReturn($this->responseMock);
+
         $this->fileResponseHandler->execute($this->serverRequestMock, $this->responseMock, []);
     }
 
@@ -155,7 +165,7 @@ class FileResponseHandlerTest extends TestCase
     {
         $xmlContent = '<?xml version="1.0" encoding="UTF-8" ?>
             <body>
-                <status>200</status>
+                <status>500</status>
                 <response>
                     <properties>
                         <id>1</id>
@@ -184,6 +194,16 @@ class FileResponseHandlerTest extends TestCase
         $this->responseMock->expects(self::once())
             ->method('getBody')
             ->willReturn($mock);
+
+        $this->responseMock->expects(self::once())
+            ->method('withStatus')
+            ->with(500)
+            ->willReturn($this->responseMock);
+
+        $this->responseMock->expects(self::once())
+            ->method('withHeader')
+            ->with(FileResponseHandler::CONTENT_TYPE, FileResponseHandler::APPLICATION_XML)
+            ->willReturn($this->responseMock);
 
         $this->serverRequestMock->expects(self::once())->method('hasHeader')
             ->with(FileResponseHandler::CONTENT_TYPE)

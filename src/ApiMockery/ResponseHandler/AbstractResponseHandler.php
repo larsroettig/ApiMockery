@@ -100,8 +100,6 @@ abstract class AbstractResponseHandler implements ResponseHandlerInterface
         string $body
     ): ResponseInterface {
         $response->getBody()->write($body);
-        $response->withStatus($statusCode);
-        $response->withHeader(self::CONTENT_TYPE, $contentType);
-        return $response;
+        return $response->withStatus($statusCode)->withHeader(self::CONTENT_TYPE, $contentType);
     }
 }
