@@ -39,7 +39,6 @@ class Application
     {
         foreach ($routes as $route) {
             $path = $route->getBaseUrl();
-
             foreach ($route->getOperations() as $operation) {
                 $method = $operation->getType();
                 $this->app->map([$method], $path, $this->getOperationClosure($operation));

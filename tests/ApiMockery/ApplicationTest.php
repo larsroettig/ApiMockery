@@ -49,8 +49,6 @@ class ApplicationTest extends TestCase
             'responses/test'
         );
 
-
-
         $path1 = new Path('foo/test', [$operationGet]);
         $testClojure = function () {
         };
@@ -60,8 +58,13 @@ class ApplicationTest extends TestCase
             ->with(['GET'], 'foo/test', $testClojure);
 
         $this->application->setup([$path1]);
+    }
 
-
+    public function testRegisterResponseHandlerEmpty()
+    {
+        $this->slimAppMock->expects(self::never())
+            ->method('map');
+        $this->application->setup([]);
     }
 
 

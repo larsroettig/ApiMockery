@@ -8,6 +8,7 @@ parameters:
     ignore_unstaged_changes: false
     tasks:
         phplint: ~
+        #infection: ~
         phpunit: ~
         phpversion: ~
         xmllint: ~
