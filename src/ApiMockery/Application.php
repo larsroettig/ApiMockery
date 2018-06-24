@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace ApiMockery;
 
-use ApiMockery\Api\ResponseHandlerFactoryInterface as ResponseHandlerFactory;
+use ApiMockery\Api\ResponseHandlerFactoryInterface ;
 use ApiMockery\Dto\Operation;
 use ApiMockery\Dto\Path;
 use Slim\App;
@@ -17,16 +17,16 @@ class Application
     private $app;
 
     /**
-     * @var ResponseHandlerFactory
+     * @var ResponseHandlerFactoryInterface
      */
     private $responseHandlerFactory;
 
     /**
      * Router constructor.
      * @param App $app
-     * @param ResponseHandlerFactory $responseHandlerFactory
+     * @param ResponseHandlerFactoryInterface $responseHandlerFactory
      */
-    public function __construct(App $app, ResponseHandlerFactory $responseHandlerFactory)
+    public function __construct(App $app, ResponseHandlerFactoryInterface $responseHandlerFactory)
     {
         $this->app = $app;
         $this->responseHandlerFactory = $responseHandlerFactory;
@@ -53,11 +53,14 @@ class Application
      */
     protected function getOperationClosure(Operation $operation): \Closure
     {
-        return function ($request, $response, $args) use ($operation) {
+        $responseHandlerFactory = $this->responseHandlerFactory;
+
+        return function ($request, $response, $args) use ($operation, $responseHandlerFactory) {
             if (!\is_array($args)) {
                 $args = [];
             }
-            $responseHandler = $this->responseHandlerFactory->create($operation);
+
+            $responseHandler = $responseHandlerFactory->create($operation);
             return $responseHandler->execute($request, $response, $args);
         };
     }

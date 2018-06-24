@@ -1,9 +1,0 @@
-{
-  "status": 200,
-  "response": {
-    "properties": {
-      "id": "1",
-      "name": "Eagle"
-    }
-  }
-}
