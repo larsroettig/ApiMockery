@@ -57,3 +57,4 @@ Currently this library support swagger config files from type v2
 
 Wanna work for [one of Germany’s leading Magento partners][11]? With agile methods, small teams and big clients? We’re currently looking for experienced **PHP & Magento developers in Munich**. Sounds interesting? Just drop me a line via l.roettig@techdivision.com
 
+[11]: https://www.techdivision.com/karriere/offene-stellen/magento-developer-m-w.html
