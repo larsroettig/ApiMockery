@@ -13,7 +13,7 @@ use ApiMockery\Api\ResponseHandlerInterface;
 use ApiMockery\Application;
 use ApiMockery\Dto\Operation;
 use ApiMockery\Dto\Path;
-use PHPStan\Testing\TestCase;
+use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\MockObject\MockObject;
 use Slim\App;
 

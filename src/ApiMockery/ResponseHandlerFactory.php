@@ -37,6 +37,9 @@ class ResponseHandlerFactory implements ResponseHandlerFactoryInterface
 
     /**
      * @inheritdoc
+     * @psalm-suppress MoreSpecificReturnType
+     * @psalm-suppress LessSpecificReturnStatement
+     * @psalm-suppress InvalidStringClass
      */
     public function create(Operation $operation): ResponseHandlerInterface
     {

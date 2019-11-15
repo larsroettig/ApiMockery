@@ -84,7 +84,7 @@ class V2 implements ConfigParserInterface
      * @param array $operationAttributes
      * @throws ConfigurationMismatchException
      */
-    protected function validateResponseHandlerConfig(array $operationAttributes)
+    private function validateResponseHandlerConfig(array $operationAttributes) : void
     {
         if (isset($operationAttributes[self::X_APIS_JSON]) === false) {
             throw new ConfigurationMismatchException('X_APIS_JSON attribute is missing.');

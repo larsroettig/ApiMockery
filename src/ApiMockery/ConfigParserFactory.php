@@ -24,6 +24,9 @@ class ConfigParserFactory
 
     /**
      * @throws ConfigurationMismatchException
+     * @psalm-suppress MoreSpecificReturnType
+     * @psalm-suppress LessSpecificReturnStatement
+     * @psalm-suppress InvalidStringClass
      */
     public function create(ConfigInterface $config): ConfigParserInterface
     {

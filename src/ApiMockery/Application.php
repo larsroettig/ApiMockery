@@ -6,7 +6,10 @@ namespace ApiMockery;
 use ApiMockery\Api\ResponseHandlerFactoryInterface ;
 use ApiMockery\Dto\Operation;
 use ApiMockery\Dto\Path;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface as RequestInterface;
 use Slim\App;
+use function is_array;
 
 class Application
 {
@@ -35,7 +38,7 @@ class Application
     /**
      * @param Path[] $routes
      */
-    public function setup(array $routes)
+    public function setup(array $routes) : void
     {
         foreach ($routes as $route) {
             $path = $route->getBaseUrl();
@@ -55,13 +58,15 @@ class Application
     {
         $responseHandlerFactory = $this->responseHandlerFactory;
 
-        return function ($request, $response, $args) use ($operation, $responseHandlerFactory) {
-            if (!\is_array($args)) {
+        return function (RequestInterface $request, ResponseInterface $response, array $args = null) use (
+            $operation,
+            $responseHandlerFactory
+        ) {
+            if (!is_array($args)) {
                 $args = [];
             }
 
-            $responseHandler = $responseHandlerFactory->create($operation);
-            return $responseHandler->execute($request, $response, $args);
+            return $responseHandlerFactory->create($operation)->execute($request, $response, $args);
         };
     }
 }

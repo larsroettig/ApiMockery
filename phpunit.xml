@@ -16,7 +16,7 @@
     <logging>
         <log type="coverage-html" target="reports/unit/coverage"/>
         <log type="coverage-clover" target="reports/unit/clover.xml"/>
-        <log type="junit" target="reports/unit/junit.xml" logIncompleteSkipped="false"/>
+        <log type="junit" target="reports/unit/junit.xml"/>
     </logging>
     <php>
         <ini name="date.timezone" value="Europe/Berlin"/>
